@@ -9,6 +9,13 @@
              $("#imgView").on('change', function(){
                  readURL(this);
              });
+             $("#imgView2").on('change', function(){
+                 readURL2(this);
+             });
+             $("#imgView3").on('change', function(){
+                 readURL3(this);
+             });
+
          });
 
          function readURL(input) {
@@ -16,7 +23,9 @@
              var reader = new FileReader();
 
              reader.onload = function (e) {
-                     $('#View').attr('src', e.target.result);
+
+                      $('#View').attr('src', e.target.result);
+
                  }
 
                reader.readAsDataURL(input.files[0]);
@@ -24,7 +33,37 @@
          }
 
 
+
+         function readURL2(input) {
+             if (input.files && input.files[0]) {
+             var reader = new FileReader();
+
+             reader.onload = function (e) {
+
+                      $('#View2').attr('src', e.target.result);
+
+                 }
+
+               reader.readAsDataURL(input.files[0]);
+             }
+         }
+
+         function readURL3(input) {
+             if (input.files && input.files[0]) {
+             var reader = new FileReader();
+
+             reader.onload = function (e) {
+
+                      $('#View3').attr('src', e.target.result);
+
+                 }
+
+               reader.readAsDataURL(input.files[0]);
+             }
+         }
+
      </script>
+
 
 
 <!DOCTYPE html>
@@ -90,8 +129,8 @@
               <label class="col-md-3 control-label">Product Image 2</label>
               <div class="col-md-6">
 
-             <input type="file" id="imgView" name="product_img2" class="form-control" required  multiple>
-              <img id="View" src="#" alt="이미지 미리보기2" />
+             <input type="file" id="imgView2" name="product_img2" class="form-control" required  multiple>
+              <img id="View2" src="#" alt="이미지 미리보기2" />
               </div>
             </div>
 
@@ -100,8 +139,8 @@
               <label class="col-md-3 control-label">Product Image 3</label>
               <div class="col-md-6">
 
-             <input type="file" id="imgView" name="product_img3" class="form-control" required  multiple>
-             <img id="View" src="#" alt="이미지 미리보기" />
+             <input type="file" id="imgView3" name="product_img3" class="form-control" required  multiple>
+             <img id="View3" src="#" alt="이미지 미리보기3" />
               </div>
             </div>
 
@@ -165,8 +204,8 @@ if(isset($_POST['submit'])){
   $product_desc = $_POST['product_desc'];
 
   $product_img1 = $_FILES['product_img1']['name'];
-    $product_img2 = $_FILES['product_img2']['name'];
-      $product_img3 = $_FILES['product_img3']['name'];
+  $product_img2 = $_FILES['product_img2']['name'];
+  $product_img3 = $_FILES['product_img3']['name'];
 
 $temp_name1 = $_FILES['product_img1']['tmp_name'];
 $temp_name2 = $_FILES['product_img2']['tmp_name'];

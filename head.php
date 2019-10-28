@@ -61,18 +61,27 @@
             echo"Cart";}
           ?></a>
         <?php }?>
-        <?php if (empty($_SESSION['user_id'])){?>
-          <a class="nav-link" href="http://localhost/main.php">Cart</a>
-        <?php }?>
+
         </li>
 
+        <?php if (!empty($_SESSION['user_id'])&&$_SESSION['user_id']=='admin'){?>
+  <a class="nav-link" href="http://localhost/admin.php">Admin Page</a>
+        <?php }?>
+
+        <?php if (!empty($_SESSION['user_id'])){?>
+  <a class="nav-link" href="http://localhost/main.php">Product</a>
+        <?php }?>
+
+
         <?php if (isset($_SESSION['user_id'])) { ?>
+
             <a class="nav-link" href=""><?php
              if($_SESSION['user_id']!='admin'){
              echo"Signed in as ", $_SESSION['user_id'];}
 
              if($_SESSION['user_id']=='admin'){
-             echo "Signed in as admin";}
+             echo "Signed in as admin";
+           }
              ?></a>
             <a class="nav-link" href="logout.php">Log Out</a>
 

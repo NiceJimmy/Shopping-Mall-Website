@@ -2,9 +2,9 @@
 <?php
 include('dbcon.php');
 include('check.php');
-  include('head.php');
-  include('functions3.php');
-    include('functions2.php');
+include('head.php');
+include('functions3.php');
+include('functions2.php');
 
 ?>
 

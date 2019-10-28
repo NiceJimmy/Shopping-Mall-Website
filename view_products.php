@@ -1,5 +1,8 @@
 
 <?php
+
+include('dbcon.php');
+// include('check.php'); //로그인 여부를 체크해주는 check.php 를 인클루드 한다.
 include('head.php');
 include('db2.php');
 
